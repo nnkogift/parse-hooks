@@ -17,5 +17,14 @@
   ],
   "author": "Gift Nnko",
   "license": "MIT",
-  "repository": "gian2705/parse-hooks"
+  "repository": "gian2705/parse-hooks",
+  "dependencies": {
+    "parse": "^2.15.0",
+    "react": "^16.13.1"
+  },
+  "bugs": {
+    "url": "https://github.com/gian2705/parse-hooks/issues",
+    "email": "nnkogift@gmail.com"
+  },
+  "homepage": "https://github.com/gian2705/parse-hooks#readme"
 }
