@@ -4,8 +4,8 @@
   <a href="https://github.com/gian2705/parse-hooks#licence" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/giantech" target="_blank">
-    <img alt="Twitter: giantech" src="https://img.shields.io/twitter/follow/giantech.svg?style=social" />
+  <a href="https://twitter.com/nnko_gift" target="_blank">
+    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/nnko_gift?label=%40nnko_gift&style=social">
   </a>
 </p>
 
