@@ -5,6 +5,6 @@
  * GitHub: gian2705
  */
 
-export * from './useCount'
-export * from './useQuery'
+export useCount from './useCount'
+export useQuery from './useQuery'
 
