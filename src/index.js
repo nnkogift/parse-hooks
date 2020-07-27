@@ -5,6 +5,8 @@
  * GitHub: gian2705
  */
 
-export useCount from './useCount'
-export useQuery from './useQuery'
+import useCount from "./useCount";
+import useQuery from "./useQuery";
 
+module.exports = useCount;
+module.exports = useQuery;

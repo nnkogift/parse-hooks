@@ -4,7 +4,7 @@
  * Email: nnkogift@gmail.com
  * GitHub: gian2705
  */
-import useCount from "../src/useCount";
+
 import Parse from 'parse'
 import React from "react";
 
