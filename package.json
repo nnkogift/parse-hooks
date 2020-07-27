@@ -1,6 +1,6 @@
 {
   "name": "@gian2705/parse-hooks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React hooks for Parse Server JS SDK",
   "main": "index.js",
   "scripts": {
