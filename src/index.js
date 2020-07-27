@@ -8,5 +8,4 @@
 import useCount from "./useCount";
 import useQuery from "./useQuery";
 
-module.exports = useCount;
-module.exports = useQuery;
+module.exports = {useQuery,useCount};
