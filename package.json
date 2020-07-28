@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "React hooks for Parse Server JS SDK",
   "main": "src/index.js",
-  "scripts": {
+  "scripts":{
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

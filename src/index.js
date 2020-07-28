@@ -11,4 +11,12 @@ import useFilter from "./useFilter";
 import useSearch from './useSearch'
 import useAll from "./useAll";
 
-module.exports = {useQuery,useCount, useFilter, useSearch, useAll};
+export{
+    useAll,
+    useCount,
+    useFilter,
+    useQuery,
+    useSearch
+}
+
+
