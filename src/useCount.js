@@ -5,6 +5,9 @@
  * GitHub: gian2705
  */
 
+
+//
+
 import {useState, useEffect} from 'react'
 
 export default function ({query}) {

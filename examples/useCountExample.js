@@ -7,17 +7,17 @@
 
 import Parse from 'parse'
 import React from "react";
+import {useCount} from "../src";
 
-function UseCountExample() {
+export default function UseCountExample() {
     const query  = Parse.Query(Parse.User);
     query.equalTo('firstName', 'Bob');
-
-    const res = useCount(query);
+    const {response, isLoading} = useCount(query);
 
     return(
         <div>
             {
-                res.isLoading ? <div>Loading...</div>: <div>You have {res.response} Bobs in the database!</div>
+                isLoading ? <div>Loading...</div>: <div>You have {response} Bobs in the database!</div>
             }
         </div>
     )
