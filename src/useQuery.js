@@ -8,7 +8,7 @@
 import {useState, useEffect} from 'react'
 
 
-export default function ({query, limit, skip}) {
+export default function (query, limit, skip) {
     const [response, setResponse] = useState();
     const [count, setCount] = useState();
     const [error, setError] = useState();

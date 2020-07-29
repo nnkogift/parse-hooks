@@ -1,3 +1,10 @@
+/*
+ * Copyright (c) 2020.
+ * Author: Gift Nnko
+ * Email: nnkogift@gmail.com
+ * GitHub: gian2705
+ */
+
 import useQuery from "./useQuery";
 import useFilter from "./useFilter";
 import useSearch from "./useSearch";
@@ -9,9 +16,9 @@ export default function (query, limit, skip, searchFields, keyword, className, f
     const [count, setCount] = useState();
     const [error, setError] = useState();
     const [isLoading, setIsLoading] = useState(true);
-    const queryHook = useQuery({query, limit, skip});
-    const filterHook = useFilter({query, limit, skip, filters});
-    const searchHook = useSearch({query, limit, skip, searchFields, className, keyword});
+    const queryHook = useQuery(query, limit, skip);
+    const filterHook = useFilter(query, limit, skip, filters);
+    const searchHook = useSearch(query, limit, skip, searchFields, keyword, className);
 
     useEffect(() => {
         const getData = () => {

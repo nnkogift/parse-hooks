@@ -13,7 +13,7 @@ function UseQueryExample() {
     const query = Parse.Query(Parse.User);
     query.equalTo('firstName', 'Bob');
 
-    const {response, isLoading, count, error} = useQuery(query);
+    const {response, isLoading, count, error} = useQuery(query, 10, 0);
 
     return (
         <div>
