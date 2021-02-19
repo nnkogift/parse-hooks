@@ -31,9 +31,13 @@ const generateQueries = (fields, className, keyword) =>{
             mQ.matchesQuery(field.fieldName, jQ);
             qs.push(mQ);
         } else {
-            const q = new Parse.Query(className);
-            q.startsWith(field, keyword);
-            qs.push(q);
+            try{
+                const q = new Parse.Query(className);
+                q.matches(field, keyword, 'i');
+                qs.push(q);
+            }catch (e){
+                console.error(e);
+            }
         }
     });
     return qs;
@@ -52,7 +56,7 @@ async function search(options) {
 }
 
 
-export default function (query, limit, skip, searchFields, keyword, className) {
+export default function (query, limit, skip, searchFields, keyword, className, sort) {
     const [response, setResponse] = useState(null);
     const [count, setCount] = useState(null);
     const [error, setError] = useState(null);
@@ -63,8 +67,11 @@ export default function (query, limit, skip, searchFields, keyword, className) {
             await setTimeout(async function () {
                 try {
                     setIsLoading(true);
+                    if(sort){
+                        const {name, direction} = sort;
+                        direction === 'asc' ? query.ascending(name): query.descending(name);
+                    }
                     const res = await search({query, searchFields, keyword, className, limit, skip});
-                    console.log(res);
                     const {response, count} = res;
                     setCount(count);
                     setResponse(response);
@@ -76,7 +83,7 @@ export default function (query, limit, skip, searchFields, keyword, className) {
             }, 500)
         };
         if (keyword) onSearch(); else return undefined;
-    }, [limit, skip, query, keyword, searchFields, className]);
+    }, [limit, skip, query, keyword, searchFields, className, sort]);
 
     return {response, error, count, isLoading}
 }

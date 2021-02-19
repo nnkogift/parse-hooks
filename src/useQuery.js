@@ -8,7 +8,7 @@
 import {useState, useEffect} from 'react'
 
 
-export default function (query, limit, skip) {
+export default function (query, limit, skip, sort) {
     const [response, setResponse] = useState();
     const [count, setCount] = useState();
     const [error, setError] = useState();
@@ -18,11 +18,16 @@ export default function (query, limit, skip) {
         const fetchObjects = async () => {
             setIsLoading(true);
             try {
+                console.log(limit, skip);
                 const con = await query.count();
                 setCount(con);
-                if (limit) {
+                if (limit || skip) {
                     query.limit(limit);
                     query.skip(skip)
+                }
+                if(sort){
+                    const {name, direction} = sort;
+                    direction === 'asc' ? query.ascending(name): query.descending(name);
                 }
                 const res = await query.find();
                 setResponse(res);
@@ -33,7 +38,7 @@ export default function (query, limit, skip) {
             }
         };
         fetchObjects();
-    }, [limit, skip, query]);
+    }, [limit, skip, query, sort]);
 
     return {response, error, count, isLoading}
 }
